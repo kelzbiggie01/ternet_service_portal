@@ -1,12 +1,21 @@
 @extends('frontend.index')
 @section('content')
     <div id="hero-div">
-  		<img src="{{asset('images/pic 3.jpg')}}" height="10%" alt="Snow" style="width:100%;">
+  		<img src="{{asset('images/pic 3.jpg')}}" height="500px" alt="Snow" style="width:100%;">
   		<div id="centered">Login</div>
 	</div>
 
+  @if(Session::has("error"))
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Sorry</strong> {{Session::get("error")}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      @endif
+
   <div class="container">
-    <form action="" method="POST">
+    <form action="{{route('login')}}" method="POST">
               @csrf
        <div class="container">
         <div class="row mt-5">

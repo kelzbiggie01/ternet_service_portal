@@ -5,19 +5,19 @@
           <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
           <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{asset('images/pic 6.jpg')}}" class="d-block w-100" alt="..." style="height:700px;">
+                <img src="{{asset('images/pic 6.jpg')}}" class="d-block w-100" alt="..." style="height:600px;">
                 <div class="carousel-caption d-none d-md-block list-style-type"none>
                     <a href=""><h1 class="text-white display-4 mt-120"><b>Fibre Optical</b></h1></a> 
                   </div>
               </div>
               <div class="carousel-item">
-                <img src="{{asset('images/pic 8.png')}}" class="d-block w-100" alt="..." style="height:700px;">
+                <img src="{{asset('images/pic 8.png')}}" class="d-block w-100" alt="..." style="height:600px;">
                 <div class="carousel-caption d-none d-md-block list-style-type"none>
                     <a href=""><h1 class="text-white display-4 mt-120"><b>Software Development</b></h1></a> 
                   </div>
               </div>
               <div class="carousel-item">
-                <img src="{{asset('images/pic 9.jpg')}}" class="d-block w-100" alt="..." style="height:700px;">
+                <img src="{{asset('images/pic 9.jpg')}}" class="d-block w-100" alt="..." style="height:600px;">
                 <div class="carousel-caption d-none d-md-block list-style-type"none>
                     <a href="software department.html"><h1 class="text-white display-4 mt-120"><b>Quality Control</b></h1></a> 
                   </div>

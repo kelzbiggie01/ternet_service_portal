@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,15 @@ Route::get('contact_us',[FrontEndController::class,'getContact_us']);
 Route::get('login',[FrontEndController::class,'getLogin']);
 Route::get('showservices',[FrontEndController::class,'showServices']);
 Route::get('showdepartment',[FrontEndController::class,'showDepartment']);
+Route::post('login',[FrontEndController::class,'login'])->name('login');
 
+
+//cant access this links without login
+Route::middleware("auth")->group(function(){
+Route::post('logout',[FrontEndController::class,'logout'])->name('logout');
+Route::get('backendservices',[FrontEndController::class,'getBackendHome']);
+Route::get('servicescreate',[ServiceController::class,'create']);
+});
 
 
 // Route::get('/', function () {

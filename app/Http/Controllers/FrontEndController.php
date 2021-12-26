@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class FrontEndController extends Controller
 {
@@ -29,5 +31,34 @@ class FrontEndController extends Controller
     }
     public function showDepartment(){
         return view('frontend.pages.showdepartment');
+    }
+    public function login(Request $request){
+        $this->validate($request,[
+            "email"=>"required|email",
+            "password"=>"required"
+        ]);
+    
+        $credentials=[
+            "email"=>$request->email,
+            "password"=>$request->password
+        ];
+    
+        if(Auth::attempt($credentials)){
+    
+            return redirect()->intended('backendservices');
+        }
+    
+        session::flash("error"," Email or Password is not valid");
+        return back();
+    } 
+
+    public function getBackendHome(){
+        return view('backend.home');
+    }
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect("/");
     }
 }
