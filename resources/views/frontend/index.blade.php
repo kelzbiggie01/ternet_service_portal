@@ -33,13 +33,13 @@
         <h3>QUICK LINKS</h3>
         <ul style="list-style-type: none;">
             <li>
-                <a href=""> home</a>
+                <a href="{{url('/')}}"> home</a>
              </li>
             <li>
-                <a href="">contact us</a>
+                <a href="{{url('services')}}">services</a>
              </li>
             <li>
-                <a href="">service</a>
+                <a href="{{url('contact_us')}}">contact us</a>
             </li>
         </ul>
     </div>
