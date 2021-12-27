@@ -98,6 +98,6 @@ class ServiceController extends Controller
         //return $service;
         
         //Session::flash("success","Successfully Updated");
-        return redirect("services");
+        return redirect("backendservices");
     }
 }

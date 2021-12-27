@@ -12,36 +12,35 @@
       @endif
     <div class="card">
         <div class="card-header">
-            <h2>Departments</h2>
-            <a href="{{url('departments/create')}}" class="btn btn-primary float-right">Add Department</a>
+            <h2>Statuses</h2>
+            <a href="{{url('statusescreate')}}" class="btn btn-primary float-right">Add Status</a>
         </div>
          <div class="card-body">
     <table class="table table-bordered">
      <thead>
          <tr>
              <th>Name</th>
-             <th>Date</th>
+             <th>Created Date</th>
              <th>Action</th>
          </tr>
      </thead>
 
      <tbody>
-         @foreach ($departments as $department)
+         @foreach($statuses as $status)
          <tr>
-             <td>{{$department->name}}</td>
-             <td>{{$department->created_at}}</td>
+             <td>{{$status->name}}</td>
+             <td>{{$status->created_at}}</td>
              <td>
-            <!-- Example single danger button -->
-            <div class="btn-group">
-              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                Action
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{url('departments',$department->id)}}">show</a>
-                <a class="dropdown-item" href="{{url('departments/'.$department->id.'/edit')}}">Edit</a>
-              </div>
-            </div>
-
+             <!-- Example single danger button -->
+                <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Action
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{url('statuses',$status->id)}}">Show</a>
+                    <a class="dropdown-item" href="{{url('statuses/'.$status->id.'/edit')}}">Edit</a>
+                </div>
+                </div>
 
              </td>
          </tr>

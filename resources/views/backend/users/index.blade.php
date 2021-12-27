@@ -12,36 +12,37 @@
       @endif
     <div class="card">
         <div class="card-header">
-            <h2>Departments</h2>
-            <a href="{{url('departments/create')}}" class="btn btn-primary float-right">Add Department</a>
+            <h2>Users</h2>
+            <a href="{{url('users/create')}}" class="btn btn-primary float-right">Add User</a>
         </div>
          <div class="card-body">
     <table class="table table-bordered">
      <thead>
          <tr>
              <th>Name</th>
-             <th>Date</th>
+             <th>Email</th>
+             <th>Department</th>
              <th>Action</th>
          </tr>
      </thead>
 
      <tbody>
-         @foreach ($departments as $department)
+         @foreach($users as $user)
          <tr>
-             <td>{{$department->name}}</td>
-             <td>{{$department->created_at}}</td>
+             <td>{{$user->name}}</td>
+             <td>{{$user->email}}</td>
+             <td>{{$user->department->name}}</td>
              <td>
-            <!-- Example single danger button -->
+             <!-- Example single danger button -->
             <div class="btn-group">
-              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                Action
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{url('departments',$department->id)}}">show</a>
-                <a class="dropdown-item" href="{{url('departments/'.$department->id.'/edit')}}">Edit</a>
-              </div>
-            </div>
-
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Action
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{url('users/'.$user->id)}}">show</a>
+                    <a class="dropdown-item" href="{{url('users/'.$user->id.'/edit')}}">Edit</a>
+                </div>
+                </div>
 
              </td>
          </tr>
@@ -51,5 +52,4 @@
   </div>
 </div>
 
-</div>
 @stop

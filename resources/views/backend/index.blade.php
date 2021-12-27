@@ -26,10 +26,10 @@
         <a class="nav-link" href="{{url('departments')}}">Departments</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Status</a>
+        <a class="nav-link" href="{{url('statuses')}}">Status</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Users</a>
+        <a class="nav-link" href="{{url('users')}}">Users</a>
       </li>
       
     </ul>
