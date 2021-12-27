@@ -52,9 +52,7 @@ class FrontEndController extends Controller
         return back();
     } 
 
-    public function getBackendHome(){
-        return view('backend.home');
-    }
+    
     public function logout(Request $request){
         auth()->logout();
         $request->session()->invalidate();

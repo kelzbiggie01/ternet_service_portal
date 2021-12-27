@@ -8,7 +8,7 @@
             
         </div>
          <div class="card-body">
-         <form class="row g-3" method="POST" action="" enctype="multipart/form-data">
+         <form class="row g-3" method="POST" action="{{route('services.store')}}" enctype="multipart/form-data">
            @csrf
   <div class="col-md-12">
     <label class="form-label">Name</label>
@@ -20,18 +20,18 @@
   <label for="inputState" class="form-label">Status</label>
     <select id="inputState" name="status_id" class="form-select">
       <option selected disabled>Select Status</option>
-      
-      <option value="id">Status Name</option>
-      
+      @foreach($statuses as $status)
+      <option value="{{$status->id}}">{{$status->name}}</option>
+      @endforeach
     </select>
   </div>
   <div class="col-md-6">
     <label for="inputState" class="form-label">Department</label>
     <select id="inputState"  name="department_id" class="form-select">
       <option selected disabled>Select Department</option>
-
-      <option value="1">Department Name</option>
-      
+      @foreach($departments as $department)
+      <option value="{{$department->id}}">{{$department->name}}</option>
+      @endforeach
     </select>
   </div>
   <div class="col-12">
@@ -49,7 +49,7 @@
   </div>
 
   <div class="col-12">
-  <a href="{{url('backendservices')}}" class="btn btn-danger m-3">Cancel</a>
+  <a href="{{url('services')}}" class="btn btn-danger m-3">Cancel</a>
   <button class="btn btn-primary m-3" type="submit">Save</button>
   </div>
 </form>

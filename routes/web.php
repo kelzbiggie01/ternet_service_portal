@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,18 @@ Route::post('login',[FrontEndController::class,'login'])->name('login');
 //cant access this links without login
 Route::middleware("auth")->group(function(){
 Route::post('logout',[FrontEndController::class,'logout'])->name('logout');
-Route::get('backendservices',[FrontEndController::class,'getBackendHome']);
+
+Route::get('backendservices',[ServiceController::class,'getBackendHome']);
 Route::get('servicescreate',[ServiceController::class,'create']);
+Route::post('services',[ServiceController::class,'store'])->name("services.store");
+
+Route::get('departments',[DepartmentController::class,'index']);
+Route::get('departments/create',[DepartmentController::class,'create']);
+Route::post('departments',[DepartmentController::class,'store']);
+Route::get('departments/{id}/edit',[DepartmentController::class,'edit']);
+Route::get('departments/{id}',[DepartmentController::class,'show']);
+Route::put('departments/update/{id}',[DepartmentController::class,'update'])->name("departments.update");//named route
+
 });
 
 
