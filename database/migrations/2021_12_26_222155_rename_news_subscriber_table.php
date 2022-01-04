@@ -13,7 +13,7 @@ class RenameNewsSubscriberTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::rename('newssubscriber','news_subscribers');
     }
 
     /**
