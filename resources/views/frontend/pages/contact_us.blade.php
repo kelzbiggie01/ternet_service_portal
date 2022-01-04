@@ -1,7 +1,7 @@
 @extends('frontend.index')
 @section('content')
         <div id="hero-div">
-  		    <img src="{{asset('images/pic 2.jpg')}}" alt="Snow" style="width:100%;height:800px;">
+  		    <img src="{{asset('images/pic 2.jpg')}}" alt="Snow" style="width:100%;height:500px;">
   		    <div id="centered" style="font-size:90px;">contact us</div>
 	    </div>
 
@@ -10,13 +10,13 @@
           <div class="col-md-2"></div>
           <div class="col-md-8">
           @if(Session::has("success"))
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Received</strong> {{Session::get("success")}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      @endif
+            <div class="alert alert-success alert-dismissible fade show">
+              <strong>Received</strong> {{Session::get("success")}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          @endif
             <form action="{{url('contacts')}}" method="POST">
             @csrf
               <h3>For more information, Contact us through this form</h3>
@@ -27,7 +27,7 @@
                   <input type="text" name="name" class="form-control form-control-lg" placeholder="Name">
                 </div>
                 <div class="col">
-                  <input type="text" name="email" class="form-control form-control-lg" placeholder="Email">
+                  <input type="email" name="email" class="form-control form-control-lg" placeholder="Email">
                 </div>
               </div>
               <div class="form-group">

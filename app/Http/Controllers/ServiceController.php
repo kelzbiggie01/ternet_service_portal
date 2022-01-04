@@ -91,7 +91,7 @@ class ServiceController extends Controller
             $imageName=time().'.'.$image->getClientOriginalExtension();
             $path=storage_path('app/public/services');
             $image->move($path,$imageName);
-            Storage::delete($service->image);
+            //Storage::delete($service->image);
             $service->image=$imageName;            
         }
         

@@ -2,8 +2,8 @@
 @section('content')
 
      <div id="hero-div">
-  		<img src="{{$service->image}}" height="10%" alt="Snow" style="width:100%;">
-  		<div id="centered">{{$service->name}}</div>
+  		<img src="{{$service->image}}" height="500px" alt="Snow" style="width:100%;">
+  		<div class="text-white display-4 mt-120" id="centered">{{$service->name}}</div>
 	</div>
 </div>
 <div class="container">
@@ -34,7 +34,7 @@
                <img src="{{$relatedservices->image}}" alt="" height="250" width="350">
                 <div class="card-body m-2">
                 <h4 class="card-title">
-                 <a href="" class="text-muted"><b>{{$relatedservices->name}}</b></a></h4>
+                 <a href="#" class="text-muted"><b>{{$relatedservices->name}}</b></a></h4>
                   <h5 class="card-text text-muted"><b>{{Str::words($relatedservices->description,10,'..')}}</b></h5>
                </div>
               </div>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Service;
 use App\Models\Department;
+use App\Models\Contact;
 use Illuminate\Support\Str;
 
 class FrontEndController extends Controller
@@ -38,6 +39,22 @@ class FrontEndController extends Controller
         $department=Department::find($id);
         return view('frontend.pages.showdepartment',compact("department"));
     }
+
+    public function storeContacts(Request $request){
+        $this->validate($request,[
+            "email"=>"email"
+        ]);
+        
+        $contacts = new Contact();
+        $contacts->name=$request->name;
+        $contacts->email=$request->email;
+        $contacts->subject=$request->subject;
+        $contacts->message=$request->message;
+        $contacts->save();
+        Session::flash("success","Thank you for contacting us");
+        return back();
+    }
+
     public function login(Request $request){
         $this->validate($request,[
             "email"=>"required|email",

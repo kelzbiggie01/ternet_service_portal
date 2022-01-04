@@ -6,6 +6,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UserController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,7 @@ use App\Http\Controllers\UserController;
 Route::get('/',[FrontEndController::class,'getHomePage']);
 Route::get('services',[FrontEndController::class,'getServices']);
 Route::get('contact_us',[FrontEndController::class,'getContact_us']);
+Route::post('contacts',[FrontEndController::class,'storeContacts']);
 Route::get('login',[FrontEndController::class,'getLogin']);
 //Route::get('showservices',[FrontEndController::class,'showServices']);
 Route::get('showservices/{id}/showservices',[FrontEndController::class,'showServices']);

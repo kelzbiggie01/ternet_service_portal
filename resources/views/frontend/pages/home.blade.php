@@ -8,7 +8,7 @@
                   <div class="carousel-item @if($count==0)active @endif">
                     <img src="{{$service->image}}"  class="d-block w-100" alt="..." height="500">
                     <div class="carousel-caption d-none d-md-block list-style-type"none>
-                    <a href="software department.html"><h1 class="text-white display-4 mt-120"><b>{{$service->name}}</b></h1></a> 
+                    <a href=""><h1 class="text-white display-4 mt-120"><b>{{$service->name}}</b></h1></a> 
                   </div>
                 </div>
                 @endforeach

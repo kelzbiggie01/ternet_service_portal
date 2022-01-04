@@ -22,7 +22,7 @@
      @foreach ($service as $service)
          <tr>
              <td>{{$service->name}}</td>
-             <td>{{$service->description}}</td>
+             <td>{{Str::words($service->description,10,'..')}}</td>
              <td>{{$service->status->name}}</td>
              <td>{{$service->department->name}}</td>
              <td>

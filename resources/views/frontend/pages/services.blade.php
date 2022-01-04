@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="hero-div">
-  	<img src="{{asset('images/pic 6.jpeg')}}" alt="Snow" style="width:100%;height:700px;">
+  	<img src="{{asset('images/pic 6.jpeg')}}" alt="Snow" style="width:100%;height:500px;">
   		<div id="centered" style="font-size:90px;color:	#e6ffff;">Services</div>
 </div>
 
