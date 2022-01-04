@@ -19,6 +19,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+    @auth
       <li class="nav-item active">
         <a class="nav-link" href="{{url('backendservices')}}">Services <span class="sr-only">(current)</span></a>
       </li>
@@ -28,14 +29,19 @@
       <li class="nav-item">
         <a class="nav-link" href="{{url('statuses')}}">Status</a>
       </li>
+      @endauth
+      @guest
       <li class="nav-item">
         <a class="nav-link" href="{{url('users')}}">Users</a>
       </li>
+      @endguest
       
     </ul>
     <form class="d-flex" action="{{route('logout')}}" method="POST">
         @csrf
+        @auth
       <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+      @endauth
     </form>
   </div>
 </nav>

@@ -4,24 +4,15 @@
           <!--  SLIDE SHOWS -->
           <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
           <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{asset('images/pic 6.jpg')}}" class="d-block w-100" alt="..." style="height:600px;">
-                <div class="carousel-caption d-none d-md-block list-style-type"none>
-                    <a href=""><h1 class="text-white display-4 mt-120"><b>Fibre Optical</b></h1></a> 
+               @foreach($services as $count=>$service)
+                  <div class="carousel-item @if($count==0)active @endif">
+                    <img src="{{$service->image}}"  class="d-block w-100" alt="..." height="500">
+                    <div class="carousel-caption d-none d-md-block list-style-type"none>
+                    <a href="software department.html"><h1 class="text-white display-4 mt-120"><b>{{$service->name}}</b></h1></a> 
                   </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('images/pic 8.png')}}" class="d-block w-100" alt="..." style="height:600px;">
-                <div class="carousel-caption d-none d-md-block list-style-type"none>
-                    <a href=""><h1 class="text-white display-4 mt-120"><b>Software Development</b></h1></a> 
-                  </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('images/pic 9.jpg')}}" class="d-block w-100" alt="..." style="height:600px;">
-                <div class="carousel-caption d-none d-md-block list-style-type"none>
-                    <a href="software department.html"><h1 class="text-white display-4 mt-120"><b>Quality Control</b></h1></a> 
-                  </div>
-              </div>
+                </div>
+                @endforeach
+              
             </div>
                 <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -42,7 +33,9 @@
 
         <div class="container">
             <div class="row mt-5">
-                
+            @foreach ($services as $service)
+              @include('frontend.partials.service',['service'=>$service]) 
+            @endforeach     
             </div>
 
             <!-- SUBSCRIBE -->

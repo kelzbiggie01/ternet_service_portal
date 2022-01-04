@@ -8,25 +8,15 @@
 
 <div class="container">
           <div class="row mt-5">
-            
+            @foreach ($services as $service)
             @include('frontend.partials.service') 
-            
+            @endforeach
           </div>
 
           <div class="row my-5 ">
             <div class="col-md-4"></div>
                <div class="col-md-4">
-               <nav aria-label="Page navigation example">
-                 <ul class="pagination">
-                   <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                   <li class="page-item"><a class="page-link" href="#">1</a></li>
-                   <li class="page-item"><a class="page-link" href="#">2</a></li>
-                   <li class="page-item"><a class="page-link" href="#">3</a></li>
-                   <li class="page-item"><a class="page-link" href="#">...</a></li>
-                   <li class="page-item"><a class="page-link" href="#">10</a></li>
-                   <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                 </ul>
-               </nav>
+               {{$services->links()}}
 
                </div>
 

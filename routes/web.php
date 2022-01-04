@@ -21,8 +21,9 @@ Route::get('/',[FrontEndController::class,'getHomePage']);
 Route::get('services',[FrontEndController::class,'getServices']);
 Route::get('contact_us',[FrontEndController::class,'getContact_us']);
 Route::get('login',[FrontEndController::class,'getLogin']);
-Route::get('showservices',[FrontEndController::class,'showServices']);
-Route::get('showdepartment',[FrontEndController::class,'showDepartment']);
+//Route::get('showservices',[FrontEndController::class,'showServices']);
+Route::get('showservices/{id}/showservices',[FrontEndController::class,'showServices']);
+Route::get('showdepartment/{id}',[FrontEndController::class,'showDepartment']);
 Route::post('login',[FrontEndController::class,'login'])->name('login');
 
 

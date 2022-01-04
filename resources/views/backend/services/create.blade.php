@@ -15,19 +15,18 @@
     <input type="text" name="name" class="form-control">
   </div>
   
-  
-  <div class="col-md-6">
-  <label for="inputState" class="form-label">Status</label>
-    <select id="inputState" name="status_id" class="form-select">
+  <div class="form-group col-md-6">
+      <label for="inputState">Status</label>
+      <select id="inputState" name="status_id" class="form-control">
       <option selected disabled>Select Status</option>
       @foreach($statuses as $status)
       <option value="{{$status->id}}">{{$status->name}}</option>
       @endforeach
-    </select>
-  </div>
-  <div class="col-md-6">
-    <label for="inputState" class="form-label">Department</label>
-    <select id="inputState"  name="department_id" class="form-select">
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputState">Department</label>
+    <select id="inputState"  name="department_id" class="form-control">
       <option selected disabled>Select Department</option>
       @foreach($departments as $department)
       <option value="{{$department->id}}">{{$department->name}}</option>
@@ -35,16 +34,16 @@
     </select>
   </div>
   <div class="col-12">
-  <div class="mb-3">
-  <label for="formFile" class="form-label">Service image</label>
-  <input class="form-control" name="image" type="file" id="formFile">
-</div>
+    <div class="mb-3">
+    <label for="formFile" class="form-label">Service image</label>
+    <input class="form-control" name="image" type="file" id="formFile">
+    </div>
   </div>
 
   <div class="col-12">
-  <div class="form-floating">
-  <textarea class="form-control" name="description" placeholder="write service description" style="height: 100px"></textarea>
-  <label>Description</label>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control" name="description" placeholder="write service description" rows="3"></textarea>
   </div>
   </div>
 

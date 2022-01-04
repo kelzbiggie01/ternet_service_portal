@@ -5,18 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Models\Service;
+use App\Models\Department;
+use Illuminate\Support\Str;
 
 class FrontEndController extends Controller
 {
     //
     public function getHomePage(){
-        // $services=Service::take(6)->get();
-        // return view('frontend.pages.home',compact('services'));
-        return view('frontend.pages.home');
+        $services=Service::take(6)->get();
+        return view('frontend.pages.home',compact('services'));
     }
 
     public function getServices(){
-        return  view('frontend.pages.services');
+        $services=Service::simplePaginate(6);
+        return  view('frontend.pages.services',compact('services'));
     }
 
     public function getContact_us(){
@@ -26,11 +29,14 @@ class FrontEndController extends Controller
     public function getLogin(){
         return view('frontend.auth.login');
     }
-    public function showServices(){
-        return view('frontend.pages.showservices');
+    public function showServices($id){
+        $service=Service::find($id);
+        $relatedservices=Service::take(3)->get();
+        return view('frontend.pages.showservices',compact("service","relatedservices"));
     }
-    public function showDepartment(){
-        return view('frontend.pages.showdepartment');
+    public function showDepartment($id){
+        $department=Department::find($id);
+        return view('frontend.pages.showdepartment',compact("department"));
     }
     public function login(Request $request){
         $this->validate($request,[

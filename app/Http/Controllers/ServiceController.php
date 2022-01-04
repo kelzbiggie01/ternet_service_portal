@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Department;
 use App\Models\Status;
-use App\Models\Session;
+
 
 class ServiceController extends Controller
 {
